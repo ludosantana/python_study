@@ -14,8 +14,7 @@ def question():
 def verifica_entrada(x):
     global i
     if x.isdigit():
-        x = int(x)
-        calc_idade(x) #quando convertido em INT, envia o valor para a funcao calc_idade()
+        calc_idade(int(x)) #quando convertido em INT, envia o valor para a funcao calc_idade()
     else:
         i += 1
         print("Digite um valor correto.")
