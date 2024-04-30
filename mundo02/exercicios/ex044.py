@@ -38,7 +38,8 @@ def pagamento(x):
     elif escolha == 3:
         print(f"Parcelando em 2x no crédito, você paga: {cor["amarelo"]}R$ {x}{cor["fecha"]}. {cor["amarelo"]}R$ {(x / 2):.2f}{cor["fecha"]} cada prestação.")
     elif escolha == 4:
-        print(f"Parcelando 3x no crédito, você paga: {cor["amarelo"]}R$ {(x + (x * 20 / 100)):.2f}{cor["fecha"]}{cor["fecha"]}. {cor["amarelo"]}R$ {((x + (x * 20 / 100)) / 3):.2f}{cor["fecha"]} cada prestação")
+        parcelas = int(input("Em quantas vezes? "))
+        print(f"Parcelando {parcelas}x no crédito, você paga: {cor["amarelo"]}R$ {(x + (x * 20 / 100)):.2f}{cor["fecha"]}{cor["fecha"]}. {cor["amarelo"]}R$ {((x + (x * 20 / 100)) / parcelas):.2f}{cor["fecha"]} cada prestação.")
 
 
 escolha_con()
