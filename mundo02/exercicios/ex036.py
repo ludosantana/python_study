@@ -1,7 +1,7 @@
 from cores import cor
 def verifica_valor_casa():
     casa = input("Qual o valor do imóvel? R$ ").strip()
-    if casa.isdigit():
+    if casa.replace(".", "").isdigit():
         casa = int(casa)
         return casa
     else:
@@ -10,7 +10,7 @@ def verifica_valor_casa():
 
 def verifica_valor_salario():
     salario = input("Qual seu salário? R$ ").strip()
-    if salario.isdigit():
+    if salario.replace(".", "").isdigit():
         salario = float(salario)
         return salario
     else:
@@ -19,7 +19,7 @@ def verifica_valor_salario():
 
 def verifica_valor_ano():
     anos = input("Gostaria de pagar em quantos anos? ").strip()
-    if anos.isdigit():
+    if anos.replace(".", "").isdigit():
         anos = int(anos)
         return anos
     else:
