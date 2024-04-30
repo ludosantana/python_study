@@ -2,50 +2,37 @@ from emoji import emojize
 from time import sleep
 from random import randint
 
-pedra = emojize(":raised_fist:")
-papel = emojize(":hand_with_fingers_splayed:")
-tesoura = emojize(":victory_hand:")
+esc = {
+    1: emojize(":raised_fist:"),#pedra
+    2: emojize(":hand_with_fingers_splayed:"),#papel
+    3: emojize(":victory_hand:")#tesoura
+}
 
 def jogo():
-    print("Jo...", end="")
-    sleep(1)
-    print("ken...", end="")
-    sleep(1)
-    print("pô!")
-    sleep(0.2)
-
-    print("1:", pedra, "| 2:", papel, "| 3:", tesoura,)
+    print("1:", esc[1], "| 2:", esc[2], "| 3:", esc[3], )
     ale = randint(1, 3)
     user = int(input("Qual opção você escolhe? "))
 
-    if user == 1 and ale == 2:
-        print(f"PLAYER -> {pedra} vs {papel} <- COMPUTADOR")
-        print(f"\033[7;31m Você perdeu! \033[m {papel} ganha de {pedra}!")
-    elif user == 1 and ale == 3:
-        print(f"PLAYER -> {pedra} vs {tesoura} <- COMPUTADOR")
-        print(f"\033[7;32m Você ganhou! \033[m {pedra} ganha de {tesoura}!")
-    elif user == 2 and ale == 1:
-        print(f"PLAYER -> {papel} vs {pedra} <- COMPUTADOR")
-        print(f"\033[7;32m Você ganhou! \033[m {papel} ganha de {pedra}!")
-    elif user == 2 and ale == 3:
-        print(f"PLAYER -> {papel} vs {tesoura} <- COMPUTADOR")
-        print(f"\033[7;31m Você perdeu! \033[m {tesoura} ganha de {papel}!")
-    elif user == 3 and ale == 1:
-        print(f"PLAYER -> {tesoura} vs {pedra} <- COMPUTADOR")
-        print(f"\033[7;31m Você perdeu! \033[m {pedra} ganha de {tesoura}!")
-    elif user == 3 and ale == 2:
-        print(f"PLAYER -> {tesoura} vs {papel} <- COMPUTADOR")
-        print(f"\033[7;32m Você ganhou! \033[m {tesoura} ganha de {papel}!")
-    elif user == 1 and ale == 1:
-        print(f"PLAYER -> {pedra} vs {pedra} <- COMPUTADOR")
-        print("\033[7;34m Empatou! \033[m Jogue de novo.")
+    if user < 1 or user > 3: #verifica se o usuario está digitando o intervalo correto
+        print("Escolha um valor correto! 1, 2 ou 3.")
         jogo()
-    elif user == 2 and ale == 2:
-        print(f"PLAYER -> {papel} vs {papel} <- COMPUTADOR")
-        print("\033[7;34m Empatou! \033[m Jogue de novo.")
-        jogo()
-    elif user == 3 and ale == 3:
-        print(f"PLAYER -> {tesoura} vs {tesoura} <- COMPUTADOR")
-        print("\033[7;34m Empatou! \033[m Jogue de novo.")
-        jogo()
+    else:
+        print("Jo...", end="")
+        sleep(1)
+        print("ken...", end="")
+        sleep(1)
+        print("pô!")
+        sleep(0.5)
+
+        if ale == user:
+            print(f"PLAYER -> {esc[user]} VS {esc[ale]} <- COMPUTADOR")
+            print("\033[7;34m Empatou! \033[m Jogue de novo.")
+            jogo()
+        elif (ale == 1 and user == 3) or (ale == 2 and user == 1) or (ale == 3 and user == 2):
+            print(f"PLAYER -> {esc[user]} VS {esc[ale]} <- COMPUTADOR")
+            print(f"\033[7;31m Você perdeu! \033[m {esc[ale]} ganha de {esc[user]}!")
+        else:
+            print(f"PLAYER -> {esc[user]} VS {esc[ale]} <- COMPUTADOR")
+            print(f"\033[7;32m Você Ganhou! \033[m {esc[user]} ganha de {esc[ale]}!")
+
 jogo()
