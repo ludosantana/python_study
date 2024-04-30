@@ -24,15 +24,15 @@ def jogo():
         print("pô!")
         sleep(0.5)
 
-        if ale == user:
+        if ale == user: #condição de empate
             print(f"PLAYER -> {esc[user]} VS {esc[ale]} <- COMPUTADOR")
             print("\033[7;34m Empatou! \033[m Jogue de novo.")
             jogo()
-        elif (ale == 1 and user == 3) or (ale == 2 and user == 1) or (ale == 3 and user == 2):
+        elif (ale == 1 and user == 3) or (ale == 2 and user == 1) or (ale == 3 and user == 2): #condição de derrota
             print(f"PLAYER -> {esc[user]} VS {esc[ale]} <- COMPUTADOR")
             print(f"\033[7;31m Você perdeu! \033[m {esc[ale]} ganha de {esc[user]}!")
         else:
-            print(f"PLAYER -> {esc[user]} VS {esc[ale]} <- COMPUTADOR")
+            print(f"PLAYER -> {esc[user]} VS {esc[ale]} <- COMPUTADOR") #condição de vitória
             print(f"\033[7;32m Você Ganhou! \033[m {esc[user]} ganha de {esc[ale]}!")
 
 jogo()
