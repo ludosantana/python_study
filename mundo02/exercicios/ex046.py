@@ -24,7 +24,7 @@ def ver(n):
         perg()
 
 def att(n):
-    global i, val_i, val_f
+    global i, val_i
     if i == 0:
         i += 1
         val_i = n
@@ -41,9 +41,11 @@ def cont(f):
         perg()
     else:
         print(f"{'Contagem regressiva!'.upper():^50}")
+
         for c in range(val_i, f-1, -1):
             print(f"{c:^50}")
             sleep(1)
+
         print(f"{' É teetraaa! '.upper():{boom}^50}")
 
 perg()
