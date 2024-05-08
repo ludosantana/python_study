@@ -26,8 +26,7 @@ i = 0 #contador global
 
 #Gerando numero aleatorio
 def gera_num():
-    n = randint(0, 5)
-    return n
+    return randint(0, 5)
 
 #JOGO
 def jogo():
@@ -40,7 +39,7 @@ def jogo():
 
     if user_entry.isdigit():
         n_user = int(user_entry)
-        if -1 < n_user < 6:
+        if 0 <= n_user <= 5:
             verifica(n_ale, n_user)
         else:
             i += 1

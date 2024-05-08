@@ -9,9 +9,10 @@ shuffle(separa) #coloquei um shuffle so pra brincar, pois o .split() transforma 
 
 print(separa)
 print(separa[0][2]) #mostra o primeiro item da lista e mostra o terceiro caracter desse item
-print("-".join(separa))
+print(" ".join(separa))
 
 frase = frase.replace("Python", "Android")
+print(frase)
 print(len(frase))
 
 print("""jasljkdnalsjdnalsjd s dajsn daj snlakjs d

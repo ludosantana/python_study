@@ -5,9 +5,9 @@ print(frase[7]) #mostra o sétimo caracter da string
 print(frase[2:15]) #mostra os caracteres entre o 2 e 15
 print(frase[2:16:2]) #mostra os caracteres entre 2 e 16 pulando 2 caracteres
 print(frase[:8]) #mostra os 8 primeiros caracteres
-print(frase[13:]) #mostra os 13 últimos caracteres
+print(frase[13:]) #mostra a partir do 13º caracter
 print((frase[3::2])) #mostra a partir do terceiro caracter, pulando 2 caracteres
-print(frase[:12:2]) #mostra os 12 ultimos caracteres, pulando 2 caracteres
+print(frase[:12:2]) #mostra os 12 primeiros caracteres, pulando 2 caracteres
 
 print("a frase \"{}\" possui \"{}\" caracteres.".format(frase, len(frase))) #len() conta o total de caracteres, incluindo espaços
 print(frase.count("a")) #conta quantas vezes aparece o caracter entre "". É case sensitive.

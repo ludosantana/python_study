@@ -1,5 +1,5 @@
-nome = str(input("Digite seu nome completo: ")).title().strip()
-nome = nome.split()
+nome = str(input("Digite seu nome completo: ")).title().strip().split()
+#nome = nome.split()
 
 print("Nome completo: \033[4;35m{}\033[m".format(" ".join(nome)))
 print("Primeiro nome: \033[1;32m{}\033[m".format(nome[0]))

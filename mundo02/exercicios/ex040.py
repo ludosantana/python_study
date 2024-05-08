@@ -3,7 +3,7 @@ n1 = None #variavel global que recebe o n1 atualizado.
 def question():
     if i == 0:
         verifica(input("Digite a primeira nota: ").strip())
-    elif i == 1:
+    else:
         verifica(input("Digite a segunda nota: ").strip())
 
 def verifica(n):
@@ -19,7 +19,7 @@ def notas(n):
         n1 = n
         i += 1
         question()
-    elif i == 1:
+    else:
         media(n)
 
 def media(n2):

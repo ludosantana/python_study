@@ -2,13 +2,11 @@ from datetime import datetime
 from cores import cor
 
 def question():
-    ano = input("Em que ano você nasceu? ").strip()
-    verify_entry(ano)
+    verify_entry(input("Em que ano você nasceu? ").strip())
 
 def verify_entry(i):
     if i.isdigit():
-        i = int(i)
-        alista(i)
+        alista(int(i))
     else:
         print("Digite um número válido.")
         question()

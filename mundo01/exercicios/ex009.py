@@ -1,7 +1,6 @@
 from cores import cor
 
-nFloat = float(input('Digite um número: '))
-n = int(nFloat)
+n = int(float(input('Digite um número: ')))
 i = 0
 print('-' * 15)
 

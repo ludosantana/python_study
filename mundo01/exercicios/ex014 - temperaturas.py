@@ -12,7 +12,7 @@ def calcCelsius():
 def calcFah():
     tempF = float(input('Informe a temperatura em °F: '))
     tempC = (tempF - 32) / 1.8
-    tempK = (tempF - 32) / 1.8 + 273.15
+    tempK = (tempF - 32) / 1.8 + 273.15 #ou também "tempC + 273.15"
     print(f'Fahrenheit = {cor["azul"]}{tempF}°F{cor["fecha"]}\nCelsius = {cor["verde"]}{tempC:.2f}°C{cor["fecha"]}\nKelvin = {cor["amarelo"]}{tempK:.2f}°K{cor["fecha"]}')
     continuar()
 
@@ -20,7 +20,7 @@ def calcFah():
 def calcKelvin():
     tempK = float(input('Informe a temperatura em °K: '))
     tempC = tempK - 273.15
-    tempF = (tempK - 273.15) * 1.8 + 32
+    tempF = (tempK - 273.15) * 1.8 + 32 #ou também "tempC * 1.8 + 32"
     print(f'Kelvin = {cor["azul"]}{tempK}°K{cor["fecha"]}\nCelsius = {cor["verde"]}{tempC:.2f}°C{cor["fecha"]}\nFahrenheit = {cor["amarelo"]}{tempF:.2f}°F{cor["fecha"]}')
     continuar()
 
@@ -43,7 +43,7 @@ def continuar():
 def choose():
     escolha = input(f'Digite um dos números para fazer a conversão desejada:\n\033[1m{cor["azul"]}[1] - Celsius | {cor["roxo"]}[2] - Fahrenheit | {cor["amarelo"]}[3] - Kelvin:\033[m ').strip()
     if escolha.isdigit():
-        escolha = int(escolha)
+        escolha = int(escolha)#precisa converter para int para poder fazer a comparação abaixo
         if escolha == 1:
              calcCelsius()
         elif escolha == 2:

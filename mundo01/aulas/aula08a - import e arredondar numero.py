@@ -1,5 +1,5 @@
 """ ============================================================
-#importa a biblioteca tinteira:
+#importa a biblioteca inteira:
 #import math
 
 #importa partes da biblioteca. Esse método não precisa adicionar math.sqrt(), math.ceil()...
