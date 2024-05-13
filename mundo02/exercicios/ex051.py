@@ -35,7 +35,7 @@ def atribui_valor(n):
 pergunta()
 
 for c in range(10):
-    pa.append(str(pt))#transformo em str para armazenar na lista, pois o .join() só funciona com str
+    pa.append(str(round(pt, 1)))#transformo em str para armazenar na lista, pois o .join() só funciona com str
     pt += r
 
 print(f"Primeiro Termo: {pa[0]}\nRazão: {r}\nPA = ({', '.join(pa)})")
