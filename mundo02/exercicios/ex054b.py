@@ -1,6 +1,6 @@
-from datetime import datetime
+from datetime import date
 
-ano = datetime.now().year
+ano = date.today().year
 i = 0
 
 for c in range(7):
