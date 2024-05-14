@@ -14,7 +14,7 @@ maiores = []
 
 for pessoa in pessoas:
     idade = ano_vigente - pessoa["data_nas"]
-    if idade < 18:
+    if idade < 21:
         menores.append(pessoa)
     else:
         maiores.append(pessoa)
