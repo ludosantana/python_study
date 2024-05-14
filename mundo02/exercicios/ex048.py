@@ -6,6 +6,6 @@ for c in range(1, l, 2):
     if c % 3 == 0:
         r += c
 
-titulo = "A soma entre os números ímpares, múltiplos de três, entre 1 e 500 é:"
+titulo = f"A soma entre os números ímpares, múltiplos de três, entre 1 e {l} é:"
 
 print(f"{titulo}\n\033[1;7;33m {r:^{len(titulo)}} \033[m")
