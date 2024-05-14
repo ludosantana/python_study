@@ -1,9 +1,5 @@
 frase = str(input("Digite uma frase: ")).strip()
 f = frase.replace(" ", "").upper()
-lista = []
-#também poderia ter usado o frase.spli(), para adicionar a frase na lista, sem precisar do FOR
-for c in f:
-    lista.append(c)
 
 if f == f[::-1]: # ::-1 mostra a str ou itens da lista ao contrario
     print(f"A frase \033[1;32m'{frase}'\033[m é palíndroma!")
