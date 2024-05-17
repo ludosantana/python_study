@@ -1,7 +1,7 @@
 def pergunta():
     for c in range(6):
-        while True: #Se o result. do user for True, termina o While e avança para a prox. etapa do For.
-            if verifica(input("Digite um número: ").strip()):
+        while True:
+            if verifica(input("Digite um número: ").strip()): #Se o result. do user for True, termina o While e avança para a prox. etapa do For.
                 break
 
 numeros = []
