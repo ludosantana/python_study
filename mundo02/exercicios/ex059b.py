@@ -1,6 +1,6 @@
-def verifica_num(m): #funcao que verifica numero, recebe a str para add na pergunta
+def verifica_num(mensagem): #funcao que verifica numero, recebe a str para add na pergunta
     while True:
-        n = input(m).strip()
+        n = input(mensagem).strip()
         if n.replace(".", "").isdigit():
             if "." in n:
                 return round(float(n), 2)
@@ -8,14 +8,14 @@ def verifica_num(m): #funcao que verifica numero, recebe a str para add na pergu
                 return int(n)
         else:
             print("\033[1;31mDigite um número válido.\033[m")
-            operacao()
-            break
 
-def soma(v_um, v_dois):
-    return v_um + v_dois
-
-def mult(v_um, v_dois):
-    return v_um * v_dois
+def opcao_menu(): #funcao que verifica numero, recebe a str para add na pergunta
+    while True:
+        n = input("Escolha a opção: ").strip()
+        if n.isdigit():
+            return int(n)
+        else:
+            print("\033[1;31mDigite um número válido.\033[m")
 
 def menu():
     print(f"\033[7;32m {'Escolha uma opção:'.upper():^85} \033[m")
@@ -29,21 +29,28 @@ def operacao():
     while True:
         v_um = verifica_num("Digite o primeiro número: ")#envia a mensagem para a fun verifica e recebe seu valor, guardando na variavel
         v_dois = verifica_num("Digite o segundo número: ")
-        menu()
-        opcao = verifica_num("Escolha a opção: ")
 
-        if opcao == 1:
-            return print(f"{v_um} + {v_dois} = {soma(v_um, v_dois)}")
-        elif opcao == 2:
-            return print(f"{v_um} x {v_dois} = {mult(v_um, v_dois)}")
-        elif opcao == 3:
-            return print(f"{max(v_um, v_dois)} é maior que {min(v_um, v_dois)}")
-        elif opcao == 4:
-            return operacao()
-        else:
-            print(f"{'Você escolheu sair.'.upper():^85}")
-            print(f"\033[7;33m {'Obrigado por utilizar o programa.'.upper():^85} \033[m")
-            break
+        while True:
+            menu()
+            opcao = opcao_menu()
+
+            if opcao == 1:
+                print(f"{v_um} + {v_dois} = {v_um + v_dois}")
+            elif opcao == 2:
+                print(f"{v_um} x {v_dois} = {v_um * v_dois}")
+            elif opcao == 3:
+                if v_um > v_dois:
+                    print(f"{v_um} é maior que {v_dois}.")
+                elif v_um < v_dois:
+                    print(f"{v_dois} é maior que {v_um}.")
+                else:
+                    print("Os valores são iguais.")
+            elif opcao == 4:
+                break #o break encerra esse while e volta para o primeiro
+            elif opcao == 5:
+                print(f"{'Você escolheu sair.'.upper():^85}")
+                print(f"\033[7;33m {'Obrigado por utilizar o programa.'.upper():^85} \033[m")
+                return #o return faz com que o primeiro while se encerre também
 
 print(f"\033[1;7;33m {'Lista de operações'.upper():^85} \033[m")
 operacao()

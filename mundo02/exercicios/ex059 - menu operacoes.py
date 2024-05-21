@@ -5,7 +5,7 @@ while condicao == 0:
     numero_dois = float(input("Digite o segundo número: "))
 
     print("[1] - Somar\n[2] - Multiplicar\n[3] - Maior\n[4] - Novos números\n[5] - Sair do programa")
-    opcao = int(input("Escolha qual operação deseja fazer:"))
+    opcao = int(input("Escolha qual operação deseja fazer: "))
 
     if opcao == 1:
         print(f"{numero_um} + {numero_dois} = {numero_um + numero_dois}")
