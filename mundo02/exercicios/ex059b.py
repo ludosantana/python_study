@@ -50,7 +50,7 @@ def operacao():
             elif opcao == 5:
                 print(f"{'Você escolheu sair.'.upper():^85}")
                 print(f"\033[7;33m {'Obrigado por utilizar o programa.'.upper():^85} \033[m")
-                return #o return faz com que o primeiro while se encerre também
+                return #o return faz com que ambos os whiles se encerrem
 
 print(f"\033[1;7;33m {'Lista de operações'.upper():^85} \033[m")
 operacao()
