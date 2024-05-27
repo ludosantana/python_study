@@ -15,7 +15,7 @@ def opcao_menu(): #funcao que verifica numero, recebe a str para add na pergunta
         if n.isdigit():
             return int(n)
         else:
-            print("\033[1;31mDigite um número válido.\033[m")
+            print("\033[1;31mDigite uma opção válida.\033[m")
 
 def menu():
     print(f"\033[7;32m {'Escolha uma opção:'.upper():^85} \033[m")
